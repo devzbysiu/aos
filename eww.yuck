@@ -1,4 +1,4 @@
-(defwindow tests_status
+(defwindow aot
   :stacking "fg"
   :windowtype "normal"
   :wm-ignore true
