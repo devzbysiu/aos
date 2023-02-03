@@ -1,0 +1,19 @@
+(defwindow tests_status
+  :stacking "fg"
+  :windowtype "normal"
+  :wm-ignore true
+  :geometry (geometry :anchor "bottom right" 
+                      :x "-5px" 
+                      :y "-5px" 
+                      :width "50px" 
+                      :height "50px")
+  (status_widget :status tests_status))
+  
+
+(defwidget status_widget [status]
+  (box :vexpand true
+       :hexpand true 
+       :style "background-image: url('${status == "success" ? "green" : status == "pending" ? "blue" : "red"}')"))
+  
+
+(defpoll tests_status :interval "5s" `curl -s localhost:8000/status | jq -r ".status"`)
