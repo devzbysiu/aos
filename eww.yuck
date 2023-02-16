@@ -16,4 +16,5 @@
        :style "background-image: url('${status == "success" ? "green" : status == "pending" ? "blue" : "red"}')"))
   
 
-(defpoll tests_status :interval "5s" `curl -s localhost:8000/status | jq -r ".status"`)
+(defpoll tests_status :interval "5s"
+    `curl --unix-socket "/run/user/$(id -u)/chester.sock" "http://chester/tests/status" | jq -r ".tests_status"`)
