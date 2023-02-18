@@ -4,12 +4,12 @@
 
 ;; Window
 
-(defwindow bar
+(defwindow aot
 	:geometry (geometry :x "-6px"
-				:y "-27px"
-				:width "30px"
-				:height "40px"
-				:anchor "bottom right")
+		:y "-27px"
+		:width "30px"
+		:height "40px"
+		:anchor "bottom right")
 	:stacking "fg"
 	(bar_background))
 
