@@ -1,0 +1,58 @@
+*{
+	all: unset;
+	font-family: feather;
+	font-family: DaddyTimeMono NF;
+}
+
+/** General **/
+.bar_background {
+  background-color: #0f0f17;
+  border-radius: 16px;
+}
+
+/** tooltip!! **/
+tooltip.background {
+    background-color: #0f0f17;
+    font-size: 18px;
+    border-radius: 10px;
+    color: #bfc9db;
+}
+
+tooltip label {
+    margin: 6px;
+}
+
+/** Widgets **/
+
+/** Tests status **/
+
+.status_module {
+  background-color: #0f0f17;
+	border-radius: 16px;
+  margin: 10px;
+}
+
+
+.status_icon {
+  font-size: 15px;
+  margin: 10px;
+}
+
+.success {
+  .status_bar {
+    color: #76FF03;
+  }
+}
+
+.failure {
+  .status_bar {
+    color: #E51400;
+  }
+}
+
+.pending {
+  .status_bar {
+    color: #0050EF;
+  }
+}
+

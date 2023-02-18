@@ -1,20 +1,35 @@
-(defwindow aot
-  :stacking "fg"
-  :windowtype "normal"
-  :wm-ignore true
-  :geometry (geometry :anchor "bottom right" 
-                      :x "-5px" 
-                      :y "-5px" 
-                      :width "50px" 
-                      :height "50px")
-  (status_widget :status tests_status))
-  
+;; Variables
 
-(defwidget status_widget [status]
-  (box :vexpand true
-       :hexpand true 
-       :style "background-image: url('${status == "success" ? "green" : status == "pending" ? "blue" : "red"}')"))
-  
+(defpoll tests_state :interval "2s" "./scripts/tests_state.sh")
 
-(defpoll tests_status :interval "5s"
-    `curl --unix-socket "/run/user/$(id -u)/chester.sock" "http://chester/tests/status" | jq -r ".tests_status"`)
+;; Window
+
+(defwindow bar
+	:geometry (geometry :x "-6px"
+				:y "-27px"
+				:width "30px"
+				:height "40px"
+				:anchor "bottom right")
+	:stacking "fg"
+	(bar_background))
+
+
+;; Widgets
+
+(defwidget bar_background []
+	(box :class "bar_background" :orientation "v"
+	(widgets)))
+
+(defwidget widgets []
+	(box :orientation "v" 
+		(tests_status :state "pending")))
+
+(defwidget tests_status [state]
+	(box :class "status_module ${tests_state}" :vexpand "false" :hexpand "false"
+		(circular-progress :value 100
+			:class "status_bar"
+            :thickness 11
+	        (button 
+	            :class "status_icon"
+                :tooltip "Tests passing"
+                ""))))
