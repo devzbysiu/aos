@@ -22,7 +22,7 @@
 
 (defwidget widgets []
 	(box :orientation "v" 
-		(tests_status :state "pending")))
+		(tests_status :state tests_state)))
 
 (defwidget tests_status [state]
 	(box :class "status_module ${state}" :vexpand "false" :hexpand "false"
