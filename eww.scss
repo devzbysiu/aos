@@ -10,7 +10,7 @@
   border-radius: 16px;
 }
 
-/** tooltip!! **/
+/** Tooltip **/
 tooltip.background {
     background-color: #0f0f17;
     font-size: 18px;
@@ -32,7 +32,6 @@ tooltip label {
   margin: 10px;
 }
 
-
 .status_icon {
   font-size: 15px;
   margin: 10px;
@@ -53,6 +52,14 @@ tooltip label {
 .pending {
   .status_bar {
     color: #0050EF;
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
   }
+}
+
+@keyframes pulse {
+  0% { color: #0050EF; }
+  50% { color: white; }
 }
 
