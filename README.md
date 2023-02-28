@@ -34,6 +34,11 @@ same time showing the status of the tests (see the widget in the top right corne
 
 ![AOT](res/aot.gif)
 
+The test is changed to make tests fail. After save, in the top right corner you can see the widget starts
+blinking which means that tests started. After the tests finish, the widget changes
+to red which means, that tests failed. Next, the test is fixed and changes are saved. The widget is bliking and then
+changes to green which means the tests passed.
+
 AOT is built upon [chester](https://github.com/devzbysiu/chester). Chester listens for changes
 in your project and run tests. It also exposes API which is consumed by AOT.
 
