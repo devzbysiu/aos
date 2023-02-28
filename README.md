@@ -40,7 +40,7 @@ to red which means, that tests failed. Next, the test is fixed and changes are s
 changes to green which means the tests passed.
 
 AOT is built upon [chester](https://github.com/devzbysiu/chester). Chester listens for changes
-in your project and run tests. It also exposes API which is consumed by AOT.
+in your project and runs the tests. It also exposes API which is consumed by AOT.
 
 The widget is created with awesome [eww](https://github.com/elkowar/eww).
 
