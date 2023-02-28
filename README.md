@@ -30,7 +30,7 @@
 
 AOT purpose is to show live tests results without cognitive break. Whether you are TDDing your
 software or refactoring well covered project, AOT allows keeping your focus on the IDE and at the
-same time showing the status of the tests. 
+same time showing the status of the tests (see the widget in the top right corner in the GIF below).
 
 ![AOT](res/aot.gif)
 
