@@ -4,14 +4,13 @@
 
 ;; Window
 
-(defwindow aot
-	:geometry (geometry :x "-6px"
-	:y "55px"
-	:width "30px"
-	:height "40px"
-	:anchor "top right")
-	:stacking "fg"
-	(bar_background))
+(defwindow aot :geometry (geometry :x "-6px"
+		:y "55px"
+		:width "30px"
+		:height "40px"
+		:anchor "top right")
+		:stacking "fg"
+		(bar_background))
 
 
 ;; Widgets
