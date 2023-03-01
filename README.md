@@ -23,24 +23,27 @@
   </h3>
 
   <sub><h4>Built with 🦀</h4></sub>
-</div>
 
+</div>
 
 # <p id="about">About</p>
 
-AOT purpose is to show live tests results without cognitive break. Whether you are TDDing your
-software or refactoring well covered project, AOT allows keeping your focus on the IDE and at the
-same time showing the status of the tests (see the widget in the top right corner in the GIF below).
+AOT purpose is to show live tests results without cognitive break. Whether you
+are TDDing your software or refactoring well covered project, AOT allows keeping
+your focus on the IDE and at the same time showing the status of the tests (see
+the widget in the top right corner in the GIF below).
 
 ![AOT](res/aot.gif)
 
-The test is changed to make tests fail. After save, in the top right corner you can see the widget starts
-blinking which means that tests started. After the tests finish, the widget changes
-to red which means, that tests failed. Next, the test is fixed and changes are saved. The widget is blinking and then
-changes to green which means the tests passed.
+The test is changed to make tests fail. After save, in the top right corner you
+can see the widget starts blinking which means that tests started. After the
+tests finish, the widget changes to red which means, that tests failed. Next,
+the test is fixed and changes are saved. The widget is blinking and then changes
+to green which means the tests passed.
 
-AOT is built upon [chester](https://github.com/devzbysiu/chester). Chester listens for changes
-in your project and runs the tests. It also exposes API which is consumed by AOT.
+AOT is built upon [chester](https://github.com/devzbysiu/chester). Chester
+listens for changes in your project and runs the tests. It also exposes API
+which is consumed by AOT.
 
 The widget is created with awesome [eww](https://github.com/elkowar/eww).
 
@@ -56,14 +59,14 @@ The widget is created with awesome [eww](https://github.com/elkowar/eww).
 
 This project is licensed under either of
 
-- Apache License, Version 2.0, (LICENSE-APACHE or http://www.apache.org/licenses/LICENSE-2.0)
+- Apache License, Version 2.0, (LICENSE-APACHE or
+  http://www.apache.org/licenses/LICENSE-2.0)
 - MIT license (LICENSE-MIT or http://opensource.org/licenses/MIT)
 
 at your option.
 
 # <p id="contribution">Contribution</p>
 
-
-Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion
-in the work by you, as defined in the Apache-2.0 license, shall be dual licensed as above,
-without any additional terms or conditions.
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in the work by you, as defined in the Apache-2.0 license, shall be
+dual licensed as above, without any additional terms or conditions.
