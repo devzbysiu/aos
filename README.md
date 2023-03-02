@@ -22,7 +22,7 @@
     <a href="#contribution">Contribution</a>
   </h3>
 
-  <sub><h4>Built with 🦀</h4></sub>
+<sub><h4>Built with 🦀</h4></sub>
 
 </div>
 
@@ -48,6 +48,17 @@ which is consumed by AOT.
 The widget is created with awesome [eww](https://github.com/elkowar/eww).
 
 # <p id="installation">Installation</p>
+
+1. Go [here](https://elkowar.github.io/eww/) to see how to install `eww`.
+
+- Put `eww` binary somewhere in `PATH` to make it more convenient to work with.
+
+2. Clone this repository.
+3. Copy `eww.scss`, `eww.yuck` and `scripts` to `~/.config/eww/`
+4. Check that it's working with `eww open aot` to open tests widget and
+   `eww close aot` to close it.
+
+If something is wrong you can use `eww logs` to see the logs.
 
 ## --- TODO ---
 
