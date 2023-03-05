@@ -60,11 +60,16 @@ The widget is created with awesome [eww](https://github.com/elkowar/eww).
 
 If something is wrong you can use `eww logs` to see the logs.
 
-## --- TODO ---
-
 # <p id="configuration">Configuration</p>
 
-## --- TODO ---
+AOT does not require any configuration after you did all the steps described in
+installation section above.
+
+If you want to change the appearance, all the visual configuration should be
+done in `eww.yuck` and `eww.scss`. Here are some useful resources:
+
+- [main `eww` documentation](https://elkowar.github.io/eww/)
+- [GTK CSS Overview](https://docs.gtk.org/gtk3/css-overview.html)
 
 # <p id="license">License</p>
 
