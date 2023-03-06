@@ -1,6 +1,7 @@
 ;; Variables
 
 (defpoll tests_state :interval "500ms" "./scripts/tests_state.sh")
+(defpoll coverage_value :interval "500ms" "./scripts/coverage_value.sh")
 
 ;; Window
 
@@ -21,14 +22,34 @@
 
 (defwidget widgets []
 	(box :orientation "v" 
-		(tests_status :state tests_state)))
+		(tests_status :state tests_state)
+		(coverage_status :coverage coverage_value)))
 
 (defwidget tests_status [state]
-	(box :class "status_module ${state}" :vexpand "false" :hexpand "false"
-		(circular-progress :value 100
-			:class "status_bar"
-      :thickness 11
-      (button 
-	      :class "status_icon"
-        :tooltip "Tests passing"
-        ""))))
+	(box :class "status_module tests_status" :vexpand "false" :hexpand "false"
+		(box :class "${state}" :vexpand "false" :hexpand "false"
+			(circular-progress :value 100
+				:class "status_bar"
+	      :thickness 11
+	      (button 
+		      :class "status_icon"
+	        :tooltip "Tests: ${state}"
+	        "")))))
+
+(defwidget coverage_status [coverage]
+	(box :class "status_module coverage_status" :vexpand "false" :hexpand "false"
+		(box 
+			:class "${coverage == "failure" ? "failure"
+				: coverage == "pending" ? "pending"
+				: coverage <= 20 ? "success_20" 
+				: coverage <= 40 ? "success_40" 
+				: coverage <= 60 ? "success_60" 
+				: coverage <= 80 ? "success_80" 
+				: "success_100"}" :vexpand "false" :hexpand "false"
+			(circular-progress :value 100
+				:class "status_bar"
+	      :thickness 11
+	      (button 
+		      :class "status_icon"
+	        :tooltip "Code coverage [%]: ${coverage}"
+	        "")))))
