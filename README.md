@@ -33,13 +33,35 @@ are TDDing your software or refactoring well covered project, AOS allows keeping
 your focus on the IDE and at the same time showing the status of the tests (see
 the widget in the top right corner in the GIF below).
 
-![AOT](res/aot.gif)
+![AOT](res/aos.gif)
 
-The test is changed to make tests fail. After save, in the top right corner you
-can see the widget starts blinking which means that tests started. After the
-tests finish, the widget changes to red which means, that tests failed. Next,
-the test is fixed and changes are saved. The widget is blinking and then changes
-to green which means the tests passed.
+First, I'm opening text editor. In the top right corner you can see three
+widgets. From the top:
+
+- results of `cargo check`
+- results of `cargo test`
+- code coverage via `cargo tarpaulin`
+
+The widgets start blinking which means that mentioned statistics are in pending
+state. We can see all results are green. Code coverage has different color based
+on the level of the coverage.
+
+Next, I'm breaking the code. We can see that the first widget starts blinking,
+then turns red and blinks again. This means that the `cargo check` failed. Next
+stage is not started until the previous one is successful, so second widget does
+not change.
+
+Next, I'm fixing the code, but I'm changing the assertion, so the tests will
+fail. First widget starts blinking, then changes green as the code syntax is
+correct. Second widget starts blinking which means the tests are running. Next,
+it changes to red which means the tests failed. Code coverage is not starting at
+this point.
+
+Finally, I'm fixing the test. First widget changes to green, second widget
+starts blinking and changes to green - tests passed. Then last widget starts
+blinking. It takes the longest because code coverage is computationally most
+intensive out of those three statistics. At the end, the widget changes color
+based on the level of the coverage.
 
 AOS is built upon [chester](https://github.com/devzbysiu/chester). Chester
 listens for changes in your project and runs various code tool. It also exposes
