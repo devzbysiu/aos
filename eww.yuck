@@ -25,7 +25,7 @@
 	(box :orientation "v" 
 		(binary_status :state check_state :label "Check")
 		(binary_status :state tests_state :label "Tests")
-		(coverage_status :coverage 80)))
+		(coverage_status :coverage coverage_value)))
 
 (defwidget binary_status [state label]
 	(box :class "status_module tests_status" :vexpand "false" :hexpand "false"
