@@ -1,9 +1,9 @@
 <div align="center">
 
-  <h1><code>Always On Tests</code></h1>
+  <h1><code>Always On Stats</code></h1>
 
   <h3>
-    <strong>Live tests status widget</strong>
+    <strong>Live code statistics widget</strong>
   </h3>
 
   <p>
@@ -28,8 +28,8 @@
 
 # <p id="about">About</p>
 
-AOT purpose is to show live tests results without cognitive break. Whether you
-are TDDing your software or refactoring well covered project, AOT allows keeping
+AOS purpose is to show live code statistics without cognitive break. Whether you
+are TDDing your software or refactoring well covered project, AOS allows keeping
 your focus on the IDE and at the same time showing the status of the tests (see
 the widget in the top right corner in the GIF below).
 
@@ -41,9 +41,15 @@ tests finish, the widget changes to red which means, that tests failed. Next,
 the test is fixed and changes are saved. The widget is blinking and then changes
 to green which means the tests passed.
 
-AOT is built upon [chester](https://github.com/devzbysiu/chester). Chester
-listens for changes in your project and runs the tests. It also exposes API
-which is consumed by AOT.
+AOS is built upon [chester](https://github.com/devzbysiu/chester). Chester
+listens for changes in your project and runs various code tool. It also exposes
+API which is consumed by AOS.
+
+Currently, supported statistics are:
+
+- `cargo check` result
+- `cargo test` result
+- code coverage via `cargo tarpaulin`
 
 The widget is created with awesome [eww](https://github.com/elkowar/eww).
 
@@ -62,7 +68,7 @@ If something is wrong you can use `eww logs` to see the logs.
 
 # <p id="configuration">Configuration</p>
 
-AOT does not require any configuration after you did all the steps described in
+AOS does not require any configuration after you did all the steps described in
 installation section above.
 
 If you want to change the appearance, all the visual configuration should be
