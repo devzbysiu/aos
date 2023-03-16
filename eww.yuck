@@ -1,6 +1,7 @@
 ;; Variables
 
 (defpoll tests_state :interval "500ms" "./scripts/tests_state.sh")
+(defpoll check_state :interval "500ms" "./scripts/check_state.sh")
 (defpoll coverage_value :interval "500ms" "./scripts/coverage_value.sh")
 
 ;; Window
@@ -22,10 +23,11 @@
 
 (defwidget widgets []
 	(box :orientation "v" 
-		(tests_status :state tests_state)
-		(coverage_status :coverage coverage_value)))
+		(binary_status :state check_state :label "Check")
+		(binary_status :state tests_state :label "Tests")
+		(coverage_status :coverage 80)))
 
-(defwidget tests_status [state]
+(defwidget binary_status [state label]
 	(box :class "status_module tests_status" :vexpand "false" :hexpand "false"
 		(box :class "${state}" :vexpand "false" :hexpand "false"
 			(circular-progress :value 100
@@ -33,7 +35,7 @@
 	      :thickness 11
 	      (button 
 		      :class "status_icon"
-	        :tooltip "Tests: ${state}"
+	        :tooltip "${label}: ${state}"
 	        "")))))
 
 (defwidget coverage_status [coverage]
