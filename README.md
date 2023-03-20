@@ -33,7 +33,7 @@ are TDDing your software or refactoring well covered project, AOS allows keeping
 your focus on the IDE and at the same time showing the status of the tests (see
 the widget in the top right corner in the GIF below).
 
-![AOT](res/aos.gif)
+![AOS](res/aos.gif)
 
 First, I'm opening text editor. In the top right corner you can see three
 widgets. From the top:
@@ -83,8 +83,8 @@ The widget is created with awesome [eww](https://github.com/elkowar/eww).
 
 2. Clone this repository.
 3. Copy `eww.scss`, `eww.yuck` and `scripts` to `~/.config/eww/`
-4. Check that it's working with `eww open aot` to open tests widget and
-   `eww close aot` to close it.
+4. Check that it's working with `eww open aos` to open tests widget and
+   `eww close aos` to close it.
 
 If something is wrong you can use `eww logs` to see the logs.
 

@@ -6,7 +6,7 @@
 
 ;; Window
 
-(defwindow aot :geometry (geometry :x "-6px"
+(defwindow aos :geometry (geometry :x "-6px"
 		:y "55px"
 		:width "30px"
 		:height "40px"
