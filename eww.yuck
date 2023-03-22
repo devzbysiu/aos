@@ -44,9 +44,9 @@
 			:class "${coverage == "failure" ? "failure"
 				: coverage == "pending" ? "pending"
 				: coverage <= 20 ? "success_20" 
-				: coverage <= 40 ? "success_40" 
-				: coverage <= 60 ? "success_60" 
-				: coverage <= 80 ? "success_80" 
+				: coverage <= 50 ? "success_50" 
+				: coverage <= 70 ? "success_70" 
+				: coverage <= 90 ? "success_90" 
 				: "success_100"}" :vexpand "false" :hexpand "false"
 			(circular-progress :value 100
 				:class "status_bar"
