@@ -47,7 +47,7 @@ state. We can see all results are green. Code coverage has different color based
 on the level of the coverage.
 
 Next, I'm breaking the code. We can see that the first widget starts blinking,
-then turns red and blinks again. This means that the `cargo check` failed. Next
+then turns red and blinks in red. This means that the `cargo check` failed. Next
 stage is not started until the previous one is successful, so second widget does
 not change.
 
@@ -58,10 +58,14 @@ it changes to red which means the tests failed. Code coverage is not starting at
 this point.
 
 Finally, I'm fixing the test. First widget changes to green, second widget
-starts blinking and changes to green - tests passed. Then last widget starts
-blinking. It takes the longest because code coverage is computationally most
-intensive out of those three statistics. At the end, the widget changes color
-based on the level of the coverage.
+starts blinking and changes to green - tests passed. Last widget does not change
+because no tests were changed (in terms of names of the tests).
+
+Then I'm changing the test name. Again, first two widgets change finishing as
+green. Next `chester` finds out that the tests set changed, so the last widget
+starts blinking. It takes the longest because code coverage is computationally
+most intensive out of those three statistics. At the end, the widget changes
+color based on the level of the coverage.
 
 AOS is built upon [chester](https://github.com/devzbysiu/chester). Chester
 listens for changes in your project and runs various code tool. It also exposes
